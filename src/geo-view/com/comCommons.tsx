@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {observe, uuid} from "rxui";
+import {observe, uuid} from "@mybricks/rxui";
 import {ComContext} from "./GeoCom";
 import {ModuleSeedModel} from "@sdk";
 import GeoComDebugModel from "./GeoComDebugModel";

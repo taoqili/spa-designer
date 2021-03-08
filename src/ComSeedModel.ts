@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {Ignore} from 'rxui'
+import {Ignore} from '@mybricks/rxui'
 
 import BaseModel from './BaseModel'
 import ComRuntimeModel from "./ComRuntimeModel";

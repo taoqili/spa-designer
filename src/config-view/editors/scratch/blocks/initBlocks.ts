@@ -149,7 +149,7 @@ function proxyData(data, refresh) {
             || prop === 'valueOf'
             || prop === '$$typeof'
             || prop === 'constructor'
-            || prop === '__rxui__'
+            || prop === '__@mybricks/rxui__'
             || isSymbol(prop)) {
             return target[prop]
           }

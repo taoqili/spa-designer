@@ -14,7 +14,7 @@ import QuestionCircleOutlined from '@ant-design/icons/QuestionCircleOutlined'
 
 import css from './Catelog.less'
 
-import {observe} from 'rxui'
+import {observe} from '@mybricks/rxui'
 import EditContext from "./EditContext";
 import {NS_Configurable} from "@sdk";
 

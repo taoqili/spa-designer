@@ -8,7 +8,7 @@
  */
 
 import css from './ComlibView.less';
-import {evt, observe, useComputed, useObservable, uuid} from 'rxui';
+import {evt, observe, useComputed, useObservable, uuid} from '@mybricks/rxui';
 import {Button, Select} from 'antd'
 import PlusOutlined from '@ant-design/icons/PlusOutlined';
 import DownOutlined from '@ant-design/icons/DownOutlined';

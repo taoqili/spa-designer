@@ -8,7 +8,7 @@
  */
 
 import {PinModel} from './PinModel';
-import {dragable, observe, useComputed, useObservable} from 'rxui';
+import {dragable, observe, useComputed, useObservable} from '@mybricks/rxui';
 import {getPosition} from '@utils';
 import {ConModel} from '../con/ConModel';
 import {DesignerContext, NS_Configurable, NS_Emits} from '@sdk';

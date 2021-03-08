@@ -1,4 +1,4 @@
-﻿import { render } from 'rxui'
+﻿import { render } from '@mybricks/rxui'
 
 import App from './App'
 

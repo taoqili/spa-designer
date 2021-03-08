@@ -1,5 +1,5 @@
 import React from 'react'
-import {useObservable} from "rxui"
+import {useObservable} from "@mybricks/rxui"
 import {Select} from 'antd'
 import css from './index.less'
 import {isValid} from "../utils";

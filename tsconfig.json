@@ -29,13 +29,10 @@
       "@utils": [
         "./src/utils/index.ts"
       ],
-      "rxui": [
-        "../../opensource-base/rxui"
-      ],
       "@mybricks/rxui": [
         "../../opensource-base/rxui"
       ],
-      "@mybricks/designer": [
+      "@mybricks/spa-designer": [
         "./src/index.ts"
       ],
       "@mybricks/compiler-js": [

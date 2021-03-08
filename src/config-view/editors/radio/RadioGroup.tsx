@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 
 import {Radio} from 'antd';
 import css from './index.less'
-import {useObservable} from "rxui";
+import {useObservable} from "@mybricks/rxui";
 import {isValid} from "../utils";
 
 export default function (props): any {

@@ -9,7 +9,7 @@
 
 import css from './ComOutliner.less';
 import {Fragment} from 'react';
-import {observe, useObservable} from 'rxui';
+import {observe, useObservable} from '@mybricks/rxui';
 import {NS_Emits,ICON_COM_DEFAULT} from '@sdk';
 
 export type ComItem = {

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { InputNumber } from 'antd'
 import { useCallback } from "react"
-import {useObservable, uuid} from "rxui"
+import {useObservable, uuid} from "@mybricks/rxui"
 import css from './index.less'
 
 export default function(editConfig): any {

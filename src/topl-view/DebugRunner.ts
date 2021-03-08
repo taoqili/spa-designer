@@ -14,7 +14,7 @@ import {exeStepTime, PinExtInputs} from "./config";
 import ToplViewModel from "./frame/ToplViewModel";
 import {ToplComModel} from "./com/ToplComModel";
 import {DesignerContext, NS_Emits} from "@sdk";
-import {igonreObservableBefore, clone} from "rxui";
+import {igonreObservableBefore, clone} from "@mybricks/rxui";
 import FrameModel from "./frame/FrameModel";
 
 let runner: I_Runner;

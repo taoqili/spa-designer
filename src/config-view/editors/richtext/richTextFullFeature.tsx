@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { useObservable } from 'rxui'
+import { useObservable } from '@mybricks/rxui'
 import { Modal, message } from 'antd'
 import uploadimage from './plugins/uploadimage'
 import { isValid, hasScripts, loadScript } from '../utils'

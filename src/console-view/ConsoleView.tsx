@@ -8,7 +8,7 @@
  */
 
 import css from './ConsoleView.less'
-import {dragable, observe, useComputed, useObservable} from "rxui";
+import {dragable, observe, useComputed, useObservable} from "@mybricks/rxui";
 import {formatDate, getPosition} from "@utils";
 import {NS_Emits} from "@sdk";
 

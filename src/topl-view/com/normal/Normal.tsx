@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {evt, observe, useComputed} from 'rxui';
+import {evt, observe, useComputed} from '@mybricks/rxui';
 import {NS_Configurable, NS_Listenable} from '@sdk';
 import {useMemo} from 'react';
 import css from './Normal.less';

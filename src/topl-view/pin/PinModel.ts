@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {clone, Ignore, Serializable} from 'rxui';
+import {clone, Ignore, Serializable} from '@mybricks/rxui';
 import ToplBaseModel from '../ToplBaseModel';
 import {E_ItemType, I_Pin, T_PinDirection} from '@mybricks/compiler-js';
 import {ConModel} from '../con/ConModel';

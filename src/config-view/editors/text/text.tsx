@@ -1,7 +1,7 @@
 import React from 'react'
 import {isValid} from '../utils'
 import {useCallback, useEffect} from 'react'
-import {useComputed, useObservable} from 'rxui'
+import {useComputed, useObservable} from '@mybricks/rxui'
 
 import css from './index.less'
 

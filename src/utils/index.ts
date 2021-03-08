@@ -17,7 +17,7 @@ export {getPosition, inPosition} from './domHelper'
 export {lazyImg} from './lazyImg'
 export {randomNum} from './random'
 export {require} from './requireJS'
-export {uuid} from 'rxui'
+export {uuid} from '@mybricks/rxui'
 export {versionGreaterThan} from './version'
 export {formatDate} from './date'
 

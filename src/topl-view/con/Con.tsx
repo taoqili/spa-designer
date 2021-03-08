@@ -9,7 +9,7 @@
 
 import css from './Con.less'
 import {ConModel} from './ConModel';
-import {dragable, evt, observe, useComputed, useObservable,} from 'rxui';
+import {dragable, evt, observe, useComputed, useObservable,} from '@mybricks/rxui';
 import {DesignerContext, NS_Configurable, NS_Emits, NS_Listenable} from "@sdk";
 import {useEffect, useMemo} from "react";
 import {getCon as getListenable} from './listenable'

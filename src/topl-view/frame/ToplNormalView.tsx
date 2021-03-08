@@ -1,4 +1,4 @@
-﻿import {dragable, evt, observe, useComputed, useObservable, useWatcher} from 'rxui';
+﻿import {dragable, evt, observe, useComputed, useObservable, useWatcher} from '@mybricks/rxui';
 import React, {useEffect, useMemo} from 'react';
 import {ToplComModel} from "../com/ToplComModel";
 import css from "./ToplNormalView.less";

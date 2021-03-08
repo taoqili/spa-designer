@@ -9,7 +9,7 @@
 
 import css from './DesnView.less';
 
-import {dragable, evt, observe, useComputed, useObservable, useWatcher} from 'rxui';
+import {dragable, evt, observe, useComputed, useObservable, useWatcher} from '@mybricks/rxui';
 import React, {useEffect, useMemo} from 'react';
 import {ViewCfgDefault} from '../config';
 

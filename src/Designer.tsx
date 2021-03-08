@@ -9,7 +9,7 @@
 
 import css from './Designer.less'
 
-import {Ignore, observe, takeSnap, undo, redo, useComputed, useObservable, uuid} from "rxui";
+import {Ignore, observe, takeSnap, undo, redo, useComputed, useObservable, uuid} from "@mybricks/rxui";
 import {
   ComSeedModel,
   DesignerContext,

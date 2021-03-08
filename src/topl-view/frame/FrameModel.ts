@@ -16,7 +16,7 @@ import ToplBaseModel from '../ToplBaseModel';
 
 import {E_ItemType} from '@mybricks/compiler-js'
 import {BaseModel, ComSeedModel, I_FrameModel, I_PinModel, T_PinSchema} from '@sdk';
-import {clone, ignore, Ignore, Serializable} from 'rxui';
+import {clone, ignore, Ignore, Serializable} from '@mybricks/rxui';
 import {SerializeNS} from '../constants';
 import {createConModel} from "../ToplUtil";
 

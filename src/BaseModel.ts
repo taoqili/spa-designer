@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {Ignore, recycle, Serializable} from 'rxui'
+import {Ignore, recycle, Serializable} from '@mybricks/rxui'
 import {uuid} from './utils';
 import {SerializeNS} from "./constants";
 

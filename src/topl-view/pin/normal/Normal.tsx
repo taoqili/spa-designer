@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {evt, observe, useComputed} from "rxui";
+import {evt, observe, useComputed} from "@mybricks/rxui";
 import css from "./Normal.less";
 import {HOVER_PIN, PinContext} from "../Pin";
 import {PinModel} from "../PinModel";

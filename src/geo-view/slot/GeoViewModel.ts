@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {ignore, Ignore, Serializable} from 'rxui'
+import {ignore, Ignore, Serializable} from '@mybricks/rxui'
 
 import SlotModel from './SlotModel';
 

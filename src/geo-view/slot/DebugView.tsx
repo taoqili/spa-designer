@@ -9,7 +9,7 @@
 
 import css from './DebugView.less';
 
-import {observe, useComputed, useObservable} from 'rxui';
+import {observe, useComputed, useObservable} from '@mybricks/rxui';
 import React, {useEffect} from 'react';
 import {ViewCfgDefault} from '../config';
 

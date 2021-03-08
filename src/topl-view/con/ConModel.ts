@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {clone, Ignore, observable, Serializable} from 'rxui';
+import {clone, Ignore, observable, Serializable} from '@mybricks/rxui';
 import ToplBaseModel from '../ToplBaseModel';
 import {E_ItemType} from '@mybricks/compiler-js';
 import FrameModel from '../frame/FrameModel';

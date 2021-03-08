@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {Ignore, Serializable} from 'rxui'
+import {Ignore, Serializable} from '@mybricks/rxui'
 
 import SlotModel from '../slot/SlotModel';
 import GeoViewModel from '../slot/GeoViewModel';

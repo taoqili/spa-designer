@@ -9,7 +9,7 @@
 
 import css from './BlocklyView.less';
 
-import {dragable, evt, undo, redo, observe, useComputed, useObservable} from "rxui";
+import {dragable, evt, undo, redo, observe, useComputed, useObservable} from "@mybricks/rxui";
 import {initConfig} from "./init";
 import {useCallback, useEffect, useMemo} from "react";
 

@@ -10,7 +10,7 @@
 import css from "./ToplCom.less";
 import cssParant from "./ToplCom.less";
 
-import {dragable, observe, useComputed, useObservable} from 'rxui';
+import {dragable, observe, useComputed, useObservable} from '@mybricks/rxui';
 import {ToplComModel} from './ToplComModel';
 import {DesignerContext, NS_Emits, T_XGraphComDef} from '@sdk';
 import Normal from './normal/Normal';

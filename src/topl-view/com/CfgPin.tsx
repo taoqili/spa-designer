@@ -8,7 +8,7 @@
  */
 
 import css from './CfgPin.less'
-import {useComputed, useObservable} from "rxui";
+import {useComputed, useObservable} from "@mybricks/rxui";
 import {NS_Emits} from "@sdk";
 import {PinModel} from "../pin/PinModel";
 

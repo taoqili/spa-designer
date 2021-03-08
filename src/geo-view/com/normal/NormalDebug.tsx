@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {observe, useComputed} from "rxui";
+import {observe, useComputed} from "@mybricks/rxui";
 import css from "./NormalDebug.less";
 import {useMemo} from "react";
 import {ComContext} from "../GeoCom";

@@ -8,7 +8,7 @@
  */
 
 import React, {useEffect} from 'react'
-import {Ignore, observe, useComputed, useObservable} from 'rxui'
+import {Ignore, observe, useComputed, useObservable} from '@mybricks/rxui'
 import {BaseModel, DesignerContext, NS_Emits, T_ComDef} from '@sdk'
 
 import GeoViewModel from './GeoViewModel'

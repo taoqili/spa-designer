@@ -11,7 +11,7 @@ import css from './Console.less'
 
 import {Fragment} from 'react'
 
-import {dragable, observe, useComputed, useObservable} from "rxui";
+import {dragable, observe, useComputed, useObservable} from "@mybricks/rxui";
 import {dateFormat} from "./util";
 import BlocklyContext from "./BlocklyContext";
 import {getPosition} from "@utils";

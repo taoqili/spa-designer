@@ -10,7 +10,7 @@
 import css from './StageView.less'
 import React, {useCallback, useEffect, useMemo} from 'react';
 
-import {dump as dumpView, evt, load as loadView, observe, useComputed, useObservable} from 'rxui'
+import {dump as dumpView, evt, load as loadView, observe, useComputed, useObservable} from '@mybricks/rxui'
 
 import {ComSeedModel, DesignerContext, NS_Emits, T_Module} from '@sdk'
 import {uuid} from '@utils';

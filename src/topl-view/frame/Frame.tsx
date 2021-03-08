@@ -14,7 +14,7 @@ import Pin from '../pin/Pin';
 import Joint from "../joint/Joint";
 import React, {useEffect} from "react";
 import ConView from "../con/ConView";
-import {dragable, evt, observe, useComputed, useObservable} from "rxui";
+import {dragable, evt, observe, useComputed, useObservable} from "@mybricks/rxui";
 import {getPosition} from "@utils";
 import {refactorCons} from "../com/util";
 import {validateCurFrame} from "./validate";

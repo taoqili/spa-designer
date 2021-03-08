@@ -1,8 +1,8 @@
 import css from './App.less';
 
-import React, {useCallback, useMemo} from 'react';
+import React, {useMemo} from 'react';
 import {message} from 'antd';
-import Designer from '@mybricks/designer';
+import Designer from '@mybricks/spa-designer';
 import {useComputed, useObservable} from '@mybricks/rxui';
 
 import designerCfg from './config'
@@ -18,11 +18,11 @@ export default function App() {
   })
 
   useMemo(() => {
-    //
+    //合并快捷键到配置对象中
     Object.assign(designerCfg, {
       keymaps() {
         return {
-          get ['ctrl+s']() {
+          get ['ctrl+s']() {//保存
             return () => {
               save(loaded)
             }
@@ -34,13 +34,17 @@ export default function App() {
 
   return (
     <div className={css.mainView}>
+      {/*工具条*/}
       <TitleBar loaded={loaded}/>
+      {/*设计器*/}
       <Designer config={designerCfg}
                 onLoad={({handlers, dump}) => {
+                  //赋值到响应式对象
                   loaded.handlers = handlers
                   loaded.dump = dump
                 }}
                 onMessage={(type, msg) => {
+                  //对设计过程中产生的消息进行处理
                   message.destroy()
                   message[type](msg)
                 }}/>
@@ -49,25 +53,37 @@ export default function App() {
 }
 
 function TitleBar({loaded}) {
-  const [leftBtns, middleBtns, rightBtns] = useComputed(() => {
-    const leftBtns = [], middleBtns = [], rightBtns = []
+  //处理onLoad中返回的handlers
+  const [middleBtns, rightBtns] = useComputed(() => {
+    const middleBtns = [], rightBtns = []
 
     if (loaded.handlers) {
       const hary = loaded.handlers
       if (hary) {
         hary.forEach(hd => {
-          if (hd.position === 'left') {
-            leftBtns.push(jsxHandler(hd))
-          } else if (hd.position === 'middle') {
-            middleBtns.push(jsxHandler(hd))
-          } else if (hd.position === 'right') {
-            rightBtns.push(jsxHandler(hd))
+          switch(hd.id){
+            case 'toggleNavView':{
+              middleBtns.push(jsxHandler(hd))
+              break
+            }
+            case 'toggleCfgView':{
+              middleBtns.push(jsxHandler(hd,{marginLeft: 'auto'}))
+              break
+            }
+            case 'toggleDebug':{
+              rightBtns.push(jsxHandler(hd,{
+                backgroundColor: '#FF0000',
+                color:'#FFF',
+                border:'0px'
+              }))
+              break
+            }
           }
         })
       }
     }
 
-    return [leftBtns, middleBtns, rightBtns]
+    return [middleBtns, rightBtns]
   })
 
   return (
@@ -76,7 +92,6 @@ function TitleBar({loaded}) {
         My<i>Bricks</i> <span>通用0代码解决方案</span>
       </div>
       <div className={css.btnsLeft}>
-        {leftBtns}
       </div>
       <div className={css.btnsHandlers}>
         {middleBtns}
@@ -90,12 +105,12 @@ function TitleBar({loaded}) {
   )
 }
 
-function jsxHandler(handler) {
-  const icon = handler.icon
-  const style = Object.assign({opacity: handler.disabled ? 0.2 : 1}, handler.style || {})
+function jsxHandler(handler,style?) {
+  const title = handler.title
+  const style = Object.assign({opacity: handler.disabled ? 0.2 : 1},style || {})
   return (
     <button disabled={handler.disabled} key={handler.id} onClick={handler.exe}
-            style={style}>{icon}</button>
+            style={style}>{title}</button>
   )
 }
 

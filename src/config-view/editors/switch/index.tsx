@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react'
 import {Switch} from 'antd'
-import {useObservable} from "rxui"
+import {useObservable} from "@mybricks/rxui"
 import {isValid} from '../utils'
 import css from './index.less'
 

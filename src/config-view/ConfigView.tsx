@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {observe, useComputed, useObservable} from "rxui";
+import {observe, useComputed, useObservable} from "@mybricks/rxui";
 import {DesignerContext, NS_Configurable} from '@sdk'
 import EditContext from './EditContext';
 import EditTabs from './Tabs';

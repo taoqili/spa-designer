@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './index.less'
 import {SketchPicker} from 'react-color';
-import {evt, useComputed, useObservable} from "rxui";
+import {evt, useComputed, useObservable} from "@mybricks/rxui";
 import {createPortal} from "react-dom";
 import {getPosition} from "@utils";
 import BgColorsOutlined from "@ant-design/icons/BgColorsOutlined";

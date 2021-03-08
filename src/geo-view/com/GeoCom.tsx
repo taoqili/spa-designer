@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {dragable, observe, useObservable} from 'rxui';
+import {dragable, observe, useObservable} from '@mybricks/rxui';
 import {DesignerContext, NS_Emits, T_XGraphComDef} from '@sdk';
 import {GeoComModel} from './GeoComModel';
 

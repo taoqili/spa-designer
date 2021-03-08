@@ -9,7 +9,7 @@
 
 import css from './ConView.less'
 import Con from "./Con";
-import {useComputed, useObservable} from "rxui";
+import {useComputed, useObservable} from "@mybricks/rxui";
 import FrameModel from "../frame/FrameModel";
 import {T_Po} from "./conTypes";
 import DiagramModel from "../frame/diagram/DiagramModel";

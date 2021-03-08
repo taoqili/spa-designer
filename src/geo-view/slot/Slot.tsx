@@ -11,7 +11,7 @@ import css from './Slot.less'
 
 import SlotModel from './SlotModel';
 import GeoCom from '../com/GeoCom';
-import {observe, useComputed} from 'rxui';
+import {observe, useComputed} from '@mybricks/rxui';
 import {DesignerContext} from '@sdk';
 import {GeoComModel} from "../com/GeoComModel";
 

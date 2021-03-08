@@ -3,6 +3,7 @@
 .DS_Store
 src/
 _scripts/
+_official-site/
 scripts/
 config/
 examples/

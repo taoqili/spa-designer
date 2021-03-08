@@ -8,7 +8,7 @@
  */
 
 import {useMemo} from "react";
-import {useObservable} from "rxui";
+import {useObservable} from "@mybricks/rxui";
 
 import BlocklyView from './BlocklyView'
 import {require} from "@utils";

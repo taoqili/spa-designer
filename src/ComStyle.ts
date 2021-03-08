@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {clone, Serializable} from 'rxui'
+import {clone, Serializable} from '@mybricks/rxui'
 import {SerializeNS} from "./constants";
 
 @Serializable(SerializeNS + 'ComStyle')

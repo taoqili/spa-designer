@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {clone, Ignore, Serializable} from "rxui";
+import {clone, Ignore, Serializable} from "@mybricks/rxui";
 import BaseModel from "./BaseModel";
 import {I_GeoComModel, I_ToplComModel, T_ComDef, T_ComRuntimeModel} from "@sdk";
 import ComStyle from "./ComStyle";

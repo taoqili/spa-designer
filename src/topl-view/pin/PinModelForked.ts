@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {Serializable} from "rxui";
+import {Serializable} from "@mybricks/rxui";
 import {SerializeNS} from "../constants";
 import {PinModel} from "./PinModel";
 import {ConModel} from "../con/ConModel";

@@ -8,7 +8,7 @@
  */
 
 import css from './Mask.less'
-import {dragable, evt, observe, useComputed} from 'rxui'
+import {dragable, evt, observe, useComputed} from '@mybricks/rxui'
 import {getPosition} from '@utils'
 import {GeoComModel} from '../com/GeoComModel'
 import {GeoViewContext} from './GeoView'

@@ -1,4 +1,4 @@
-import { useObservable } from "rxui"
+import { useObservable } from "@mybricks/rxui"
 import React, { useCallback, useEffect } from 'react'
 import { isValid } from '../utils'
 import { Input } from 'antd'

@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {observe} from 'rxui';
+import {observe} from '@mybricks/rxui';
 import css from './Tabs.less';
 import EditContext from './EditContext';
 import {NS_Configurable} from "@sdk";

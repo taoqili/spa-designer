@@ -9,7 +9,7 @@
 
 import css from './ExceptionCom.less';
 import {GeoComModel} from "../GeoComModel";
-import {evt, observe, useComputed} from "rxui";
+import {evt, observe, useComputed} from "@mybricks/rxui";
 import {ComContext} from "../GeoCom";
 import {useMemo} from "react";
 import {get as getConfigurable, getEditContext} from "../configrable";

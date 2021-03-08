@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import { Select } from 'antd'
-import { useObservable, dragable } from "rxui"
+import { useObservable, dragable } from "@mybricks/rxui"
 import { isValid, deepCopy, getCurrentNodeByClassName } from '../utils'
 import css from './index.less'
 

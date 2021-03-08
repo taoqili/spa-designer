@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {observe, useObservable, useComputed} from 'rxui';
+import {observe, useObservable, useComputed} from '@mybricks/rxui';
 import React, {useEffect} from 'react';
 import {DesignerContext, NS_Emits} from '@sdk';
 import css from "./ToplView.less";

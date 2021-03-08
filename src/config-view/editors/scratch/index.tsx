@@ -7,7 +7,7 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import {evt, useObservable} from "rxui";
+import {evt, useObservable} from "@mybricks/rxui";
 import {NS_Emits} from "@sdk";
 import Load from "./Load";
 import {useCallback} from "react";

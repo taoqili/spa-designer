@@ -8,7 +8,7 @@
  */
 
 import css from './GeoCom.less';
-import {observe} from "rxui";
+import {observe} from "@mybricks/rxui";
 import {ComContext} from "./GeoCom";
 
 export default function ErrorCom({msg}: { msg: string }) {
