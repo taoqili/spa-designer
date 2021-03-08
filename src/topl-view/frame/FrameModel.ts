@@ -280,7 +280,7 @@ export default class FrameModel extends ToplBaseModel implements I_FrameModel {
   }
 
   addConnection(from: ConModel, temp?: boolean): ConModel
-  addConnection(from: I_PinModel, to: I_PinModel, temp?: boolean): ConModel
+  addConnection(from: PinModel, to: PinModel, temp?: boolean): ConModel
   addConnection(...args): ConModel {
     let con: ConModel
     if (args[0] instanceof ConModel) {

@@ -18,8 +18,6 @@ import {GeoComModel} from "../com/GeoComModel";
 export default class GeoViewModel extends SlotModel {
   name: string = VIEW_GEO_NAME
 
-  displayType: 'dialog' | undefined
-
   @Ignore
   selectZone: { x, y, w, h, models }
 

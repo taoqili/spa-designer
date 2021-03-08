@@ -73,21 +73,10 @@ export default function DesnView({viewModel}: { viewModel: GeoViewModel }) {
   useEffect(() => {
     if (viewModel.state.isEnabled()) {
       scrollFix(viewModel)
-      // if (!viewModel.focusModelAry?.length) {
-      //   click()
-      // }
     }
   }, [viewModel.state.isEnabled()])
 
   useEffect(() => {
-    // viewModel.$el.parentNode.parentNode.addEventListener('wheel', function (evt) {
-    //   wrapWheel(() => {
-    //     wheel(evt, viewModel)
-    //   })(evt)
-    //
-    //   //evt.preventDefault()
-    // }, {passive: false})
-
     const validateSlot = (slotModel: SlotModel) => {
       if (slotModel.comAry) {
         slotModel.comAry.forEach(com => {
@@ -115,11 +104,6 @@ export default function DesnView({viewModel}: { viewModel: GeoViewModel }) {
       top: viewCtx.mover.y
     }))
 
-  /**
-   * @description display:none导致dom位置计算错误
-   * @author 梁李昊
-   * @time 2021/02/05
-   * **/
   const viewWrapStyle = useComputed(() => {
     const isEnabled = viewModel.state.isEnabled()
     return {
@@ -129,12 +113,10 @@ export default function DesnView({viewModel}: { viewModel: GeoViewModel }) {
   })
 
   return (
-    <div className={css.viewWrap} 
-        // style={{display: viewModel.state.isEnabled() ? 'block' : 'none'}}
+    <div className={css.viewWrap}
       style={viewWrapStyle}
       onClick={clickWrap}
       onScroll={scroll}
-      // onWheel={e => wheel(e, viewModel)}
     >
       <div style={wrapViewStyle}
            className={`${css.geoView} ${viewModel.state.isHovering() ? css.geoViewHover : ''}`}
@@ -144,9 +126,6 @@ export default function DesnView({viewModel}: { viewModel: GeoViewModel }) {
                        ${viewModel.style.isLayoutAbsolute() ? css.zoomViewAbsolute : css.zoomViewFlow}`}
              ref={el => el && (viewModel.$el = el)}>
           {viewModel.comAry.map((md, idx) => {
-              // if(md.id==='u_n3r49d'){
-              //   debugger
-              // }
               return <GeoCom key={md.id} model={md}/>
             }
           )}

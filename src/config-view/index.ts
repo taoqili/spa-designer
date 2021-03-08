@@ -7,5 +7,5 @@
  * mailTo:mybricks@126.com wechatID:ALJZJZ
  */
 
-import EditView from './EditView'
-export default EditView
+import ConfigView from './ConfigView'
+export default ConfigView

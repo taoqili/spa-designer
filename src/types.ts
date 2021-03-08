@@ -268,29 +268,6 @@ export type T_DesignerConfig = {
 
   editorLoader: ({type, title, value, options}) => {}
 
-  extComDef?: {
-    pointId: string,
-    comAry: {
-      id: string,
-      title: string,
-      data: {},
-      inputs?: {
-        id: string,
-        title: string,
-        schema: { type: string },
-        exe: ({data: any}, val) => any
-      }[],
-      outputs?: {
-        id: string,
-        title: string,
-        schema: { type: string },
-        exe: ({data: any}, val) => any
-      }[]
-    }[]
-  }[]
-
-  extBlocks
-
   keymaps: () => { [keys: string]: () => void }
 
   stage: {
@@ -302,19 +279,20 @@ export type T_DesignerConfig = {
       height: number,
       width: number
     }
-    configs: {
+  }
+
+  defaultCfgPanel: {
+    title: string,
+    items: {
+      id: string,
       title: string,
-      items: {
-        id: string,
-        title: string,
-        type: string,
-        options?,
-        value: {
-          get: () => any,
-          set: (v: any) => any
-        }
-      }[]
-    }
+      type: string,
+      options?,
+      value: {
+        get: () => any,
+        set: (v: any) => any
+      }
+    }[]
   }
 
   debug: {
@@ -389,8 +367,4 @@ export interface I_PinModel extends I_Pin {
   focus()
 
   blur()
-}
-
-export interface I_ConModel extends I_Connection {
-
 }

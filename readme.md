@@ -37,3 +37,7 @@ yarn run dev
 - [设计器使用文档](https://xgraph.cn/)
 - [所有组件](https://xgraph.cn/)
 - [组件开发文档](https://xgraph.cn/)
+
+## License
+
+MIT

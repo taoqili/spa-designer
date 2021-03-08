@@ -1,6 +1,6 @@
 import css from './App.less';
 
-import React, {useCallback} from 'react';
+import React, {useCallback, useMemo} from 'react';
 import {message} from 'antd';
 import Designer from '@mybricks/designer';
 import {useComputed, useObservable} from '@mybricks/rxui';
@@ -8,32 +8,29 @@ import {useComputed, useObservable} from '@mybricks/rxui';
 import designerCfg from './config'
 
 import {getLocationSearch} from "./utils";
-import {useState} from "React";
 import {LS_DEFAULT_KEY, LS_VB_PRE} from "./constants";
 
 export default function App() {
+  //定义响应式对象，用于保存设计器onload返回的内容
   const loaded = useObservable(class {
-    handlers
-    dump
+    handlers//按钮
+    dump//保存时获取当前设计内容的函数
   })
 
-  const onMessage = useCallback((type, msg) => {
-    message.destroy()
-    message[type](msg)
-  }, [])
-
-
-  Object.assign(designerCfg, {
-    keymaps() {
-      return {
-        get ['ctrl+s']() {
-          return () => {
-            save(loaded)
+  useMemo(() => {
+    //
+    Object.assign(designerCfg, {
+      keymaps() {
+        return {
+          get ['ctrl+s']() {
+            return () => {
+              save(loaded)
+            }
           }
         }
       }
-    }
-  })
+    })
+  }, [])
 
   return (
     <div className={css.mainView}>
@@ -43,13 +40,16 @@ export default function App() {
                   loaded.handlers = handlers
                   loaded.dump = dump
                 }}
-                onMessage={onMessage}/>
+                onMessage={(type, msg) => {
+                  message.destroy()
+                  message[type](msg)
+                }}/>
     </div>
   )
 }
 
 function TitleBar({loaded}) {
-  const [leftBtns,middleBtns,rightBtns] = useComputed(()=>{
+  const [leftBtns, middleBtns, rightBtns] = useComputed(() => {
     const leftBtns = [], middleBtns = [], rightBtns = []
 
     if (loaded.handlers) {
@@ -67,7 +67,7 @@ function TitleBar({loaded}) {
       }
     }
 
-    return [leftBtns,middleBtns,rightBtns]
+    return [leftBtns, middleBtns, rightBtns]
   })
 
   return (

@@ -608,7 +608,6 @@ export class ToplComModel extends ComSeedModel implements I_Node {
         return getIO(model, id, 'input')
       },
       add(id, title, schema, deletable, conMax) {
-        assetPinSchema({schema} as any)
         //deletable = deletable !== void 0 ? deletable : true
         const pin = model.addInputPinInModel(id, title, schema, deletable, conMax)
         // setTimeout(v => {
@@ -622,7 +621,6 @@ export class ToplComModel extends ComSeedModel implements I_Node {
         model.setInputPinTitle(id, title)
       },
       setSchema(id, schema) {
-        assetPinSchema({schema} as any)
         model.setInputPinSchema(id, schema)
       }
     }
@@ -635,7 +633,6 @@ export class ToplComModel extends ComSeedModel implements I_Node {
         return getIO(model, id, 'output')
       },
       add(id, title, schema, deletable, conMax) {
-        assetPinSchema({schema} as any)
         //deletable = deletable !== void 0 ? deletable : true
         const pin = model.addOutputPinInModel(id, title, schema, deletable, conMax)
         // setTimeout(v => {
@@ -649,7 +646,6 @@ export class ToplComModel extends ComSeedModel implements I_Node {
         model.setOutputPinTitle(id, title)
       },
       setSchema(id, schema) {
-        assetPinSchema({schema} as any)
         model.setOutputPinSchema(id, schema)
       }
     }

@@ -16,7 +16,7 @@ export function getConfigs(svContext: StageViewContext) {
 
   const ctxCfgs = context.configs
 
-  const stageCfgs = ctxCfgs.stage?.configs
+  const stageCfgs = ctxCfgs.defaultCfgPanel
 
   let comCategary = new NS_Configurable.Category(stageCfgs?.title || '项目')
   rtn.push(comCategary)

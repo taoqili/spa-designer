@@ -13,7 +13,7 @@ import EditContext from './EditContext';
 import EditTabs from './Tabs';
 import EditCatelog from './Catelog';
 
-export default function EditView() {
+export default function ConfigView() {
   const context = observe(DesignerContext, {from: 'parents'})
   const myContext = useObservable(EditContext, next => next({
     context
@@ -32,40 +32,6 @@ export default function EditView() {
       myContext.setCatelogs(catelogs)
     }
   })
-
-  // const initContext = useCallback(() => {
-  //   const groupItems = config.stage?.bgConfig
-  //
-  //   myContext.activeCateId = 'tab_0'
-  //   myContext.setCatelogs([{
-  //     title: '项目',
-  //     id: myContext.activeCateId,
-  //     groups: [{
-  //       items: groupItems
-  //     }]
-  //   }] as any)
-  // }, [])
-  //
-  // useEffect(() => {
-  //   initContext()
-  // }, [])
-
-  // observe(NS_Emits.Component, (next: any) => {
-  //   next({
-  //     focus(model: I_Configurable) {
-  //       if (typeof model?.getConfigs === 'function') {
-  //         const catelogs = model.getConfigs()
-  //
-  //         myContext.setCatelogs(catelogs)
-  //         //myContext.setData(contextData)
-  //
-  //         // setTimeout(() => {
-  //         //   context.setData(contextData)
-  //         // }, 0)
-  //       }
-  //     }
-  //   })
-  // }, {'from': 'parents'})
 
   return (
     <>

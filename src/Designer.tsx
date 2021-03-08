@@ -22,7 +22,7 @@ import React, {useMemo} from "react";
 import ComOutliner from "./nav-view/ComOutliner";
 
 import {dump as dumpPage, StageView} from "./stage-view";
-import EditView from "./edit-view";
+import ConfigView from "./config-view";
 import ConsoleView from "./console-view";
 
 import {deepClone} from "@utils";
@@ -68,10 +68,10 @@ class MyContext {
     this.showNavView = !this.showNavView
   }
 
-  showEditView: boolean = true
+  showConfigView: boolean = true
 
-  toggleEditView() {
-    this.showEditView = !this.showEditView
+  toggleConfigView() {
+    this.showConfigView = !this.showConfigView
   }
 
   handlersDisabled: boolean = false
@@ -325,7 +325,7 @@ export default function Designer({config, onLoad, onMessage, onEdit}: T_Params) 
     if (desnContext.isShowModelFullScreen()) {
       rtn.push(css.fullScreen)
     }
-    if (!myContext.showEditView) {
+    if (!myContext.showConfigView) {
       rtn.push(css.hideEditView)
     }
     if (!myContext.showNavView) {
@@ -353,7 +353,7 @@ export default function Designer({config, onLoad, onMessage, onEdit}: T_Params) 
         <ConsoleView/>
       </div>
       <div className={css.lyEdt}>
-        <EditView config={config}/>
+        <ConfigView config={config}/>
       </div>
     </div>
   )
@@ -363,35 +363,27 @@ function genLoadedObj(designerContext: DesignerContext, myContext: MyContext) {
   return {
     handlers: [
       {
-        id: 'navView',
-        get icon() {
+        id: 'toggleNavView',
+        get title() {
           return myContext.showNavView ? '<' : '>'
         },
-        position: 'middle',
         exe() {
           myContext.toggleNavView()
         }
       },
       {
-        id: 'editView',
-        get icon() {
-          return myContext.showEditView ? '>' : '<'
+        id: 'toggleCfgView',
+        get title() {
+          return myContext.showConfigView ? '>' : '<'
         },
         position: 'middle',
-        style: {marginLeft: 'auto'},
         exe() {
-          myContext.toggleEditView()
+          myContext.toggleConfigView()
         }
       },
       {
-        id: 'switchDD',
-        position: 'right',
-        get style() {
-          return {
-            backgroundColor: '#fcc5c5'
-          }
-        },
-        get icon() {
+        id: 'toggleDebug',
+        get title() {
           return designerContext.isDebugMode() ? '设计' : '调试'
         },
         exe() {

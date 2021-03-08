@@ -142,7 +142,6 @@ export default function StageView({content}: { content: {} }) {
 
     if (content) {
       loadView(content as any)
-      //_2020_11_17.frame(myContext)//TODO TEMP
     } else {//blank
       loadBlank()
     }

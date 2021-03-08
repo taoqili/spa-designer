@@ -15,7 +15,6 @@ import css from "./ToplView.less";
 import {initEmitComponent, initEmitIOEditor} from "./emits";
 import {PinModel} from "../pin/PinModel";
 import FrameModel from "./FrameModel";
-import DiagramView from "./diagram/DiagramView";
 import {validateAllFrames} from "./validate";
 import {run, stop, stopRunner} from "../DebugRunner";
 import ToplNormalView from "./ToplNormalView";
