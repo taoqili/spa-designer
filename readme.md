@@ -1,4 +1,4 @@
-# @myBricks/designer使用说明
+# @myBricks/designer
 
 > 点击 [在线体验](https://mybricks.world)  
 > [Github] [@mybricks/desinger](https://github.com/mybricks/designer)
