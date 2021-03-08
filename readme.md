@@ -126,6 +126,6 @@ export default function App() {
 ## 关于
 @MyBricks团队
 
-> 微信号 ALJZJZ
-> 邮箱 mybricks@126.com
-> 权利所有：@MyBricks团队
+> 微信号 ALJZJZ  
+> 邮箱 mybricks@126.com  
+> 权利所有：@MyBricks团队  
