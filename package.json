@@ -1,5 +1,5 @@
 {
-  "name": "@mybricks/designer",
+  "name": "@mybricks/spa-designer",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
     "@mybricks/compiler-js": "^0.0.1",
-    "@mybricks/rxui": "1.0.0",
+    "@mybricks/rxui": "^1.0.2",
     "antd": "^4.12.3",
     "react-color": "^2.19.3"
   },

@@ -1,4 +1,4 @@
-# @myBricks/designer
+# @myBricks/spa-designer
 
 > 点击 [在线体验](https://mybricks.world)  
 > [Github] [@mybricks/desinger](https://github.com/mybricks/designer)
@@ -22,7 +22,7 @@ npm run dev
 ## 使用\<Designer\/\>组件
 
 ```bash
-npm install @mybricks/designer --save
+npm install @mybricks/spa-designer --save
 ```
 
 **参考Github上的[examples文件夹](https://github.com/mybricks/designer/tree/master/examples)的代码**，
@@ -40,7 +40,7 @@ examples<br/>
 App.tsx：
 
 ```tsx
-import Designer from '@mybricks/designer';
+import Designer from '@mybricks/spa-designer';
 import {useComputed, useObservable} from '@mybricks/rxui';
 import designerCfg from './config'
 
