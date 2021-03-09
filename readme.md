@@ -1,7 +1,7 @@
-# @myBricks/spa-designer
+# @myBricks/spa-designer使用说明
 
 > 点击 [在线体验](https://mybricks.world)  
-> [Github] [@mybricks/desinger](https://github.com/mybricks/designer)
+> [Github] [@mybricks/spa-desinger](https://github.com/mybricks/spa-designer)
 
 ## 特性
 
@@ -13,7 +13,7 @@
 ## 安装及体验
 
 ```bash
-git clone git@github.com:mybricks/designer.git
+git clone git@github.com:mybricks/spa-designer.git
 cd ./designer
 npm install
 npm run dev
@@ -25,7 +25,7 @@ npm run dev
 npm install @mybricks/spa-designer --save
 ```
 
-**参考Github上的[examples文件夹](https://github.com/mybricks/designer/tree/master/examples)的代码**，
+**参考Github上的[examples文件夹](https://github.com/mybricks/spa-designer/tree/master/examples)的代码**，
 主要文件列表如下:
 
 examples<br/>
@@ -121,7 +121,6 @@ export default function App() {
 |  ----  | ----  | ----  |
 | type  | 消息的类型 | 'info'\|'warn'\|'error' |
 | msg  | 消息内容 | string |
-
 
 ## 关于
 

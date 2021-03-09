@@ -14,7 +14,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
     "@mybricks/compiler-js": "^0.0.1",
-    "@mybricks/rxui": "^1.0.2",
+    "@mybricks/rxui": "^1.0.3",
     "antd": "^4.12.3",
     "react-color": "^2.19.3"
   },
