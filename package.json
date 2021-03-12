@@ -1,6 +1,6 @@
 {
   "name": "@mybricks/spa-designer",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",

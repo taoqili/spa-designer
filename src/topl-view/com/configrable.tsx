@@ -11,6 +11,7 @@ import {NS_Configurable} from "@sdk";
 import {ComContext} from "./ToplCom";
 import {createEdtAry, createEdtItem} from "../util";
 import CfgPin from "./CfgPin";
+import {EDITOR_ROOT_SELECTOR} from "../../constants";
 
 export function get(comContext: ComContext, reFocus?: () => any) {
   const {model, comDef, context, emitMessage, emitModule, emitItem, emitSnap} = comContext
@@ -108,7 +109,8 @@ export function get(comContext: ComContext, reFocus?: () => any) {
   comCategary.addGroup(comGroup)
 
   if (context.isDesnMode()) {
-    const ary = createEdtAry(comContext.comDef, getEditContext(comContext), {'*': true}, reFocus);
+    const ary = createEdtAry(comContext.comDef, getEditContext(comContext),
+      {[EDITOR_ROOT_SELECTOR]: true}, reFocus);
     if (ary) {
       const edtGroup = new NS_Configurable.Group()
       edtGroup.addItems(ary)
