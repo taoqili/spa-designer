@@ -23,6 +23,7 @@ import {alignToCanvasGrid} from "../ToplUtil";
 import {PinModel} from "../pin/PinModel";
 import Pin from "../pin/Pin";
 import FrameModel from "../frame/FrameModel";
+import Block from "./block/Block";
 
 export class ComContext {
   context: DesignerContext
@@ -120,7 +121,11 @@ export default function ToplCom({model}: { model: ToplComModel }) {
     }
   }, [])
 
-  return <Normal/>
+  if (model.frames?.length > 0) {
+    return <Block/>
+  } else {
+    return <Normal/>
+  }
 }
 
 export function getStyle(model: ToplComModel) {
@@ -211,7 +216,7 @@ export function Inputs({model, inputPinAry, readOnly}:
   )
 }
 
-export function Ouputs({model, outputPinAry, type, className}:
+export function Outputs({model, outputPinAry, type, className}:
                          { model: ToplComModel, outputPinAry?: PinModel[] }) {
   const rtn = []
 

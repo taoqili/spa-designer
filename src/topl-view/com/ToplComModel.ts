@@ -304,7 +304,7 @@ export class ToplComModel extends ComSeedModel implements I_Node {
     return ipim[ipim.length - 1]//Return observable object
   }
 
-  addInputPinExt(hostId: string, title: string, schema: T_PinSchema): PinModel {
+  addInputPinExt(hostId: string, title: string, schema?: T_PinSchema): PinModel {
     const exist = this.inputPinExts.find(pin => {
       return pin.hostId === hostId
     })

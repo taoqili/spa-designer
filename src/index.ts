@@ -8,4 +8,7 @@
  */
 
 import Designer from './Designer'
+
 export default Designer
+
+export {PlugIns} from './plugins'

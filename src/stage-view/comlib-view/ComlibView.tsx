@@ -338,7 +338,7 @@ function renderComItem(lib, com, myCtx: MyContext) {
            click(lib, com)
          })}>
       <div className={css.title}>
-        <div className={css.comIconFallback}>{com.title.substr(0, 1)}</div>
+        <div className={css.comIconFallback}>{com.title?.substr(0, 1)}</div>
         <span className={css.comText}>{com.title}</span>
       </div>
     </div>

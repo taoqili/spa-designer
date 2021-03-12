@@ -81,7 +81,7 @@ export class PinModel extends ToplBaseModel implements I_PinModel {
     direction: T_PinDirection,
     hostId: string,
     title: string,
-    schema: T_PinSchema,
+    schema?: T_PinSchema,
     conMax?: number | null,
     deletable?: boolean
   ) {

@@ -8,6 +8,6 @@ tags/*
 .vscode/
 .tmp/
 _scripts/
-_official-site/
+_plugins/
 dist/
 package-lock.json

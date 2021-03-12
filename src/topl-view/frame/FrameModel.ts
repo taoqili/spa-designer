@@ -10,7 +10,7 @@
 import {PinModel} from '../pin/PinModel';
 import {ToplComModel} from '../com/ToplComModel';
 import {ConModel} from '../con/ConModel';
-import {Arrays, canConnectTo, getPosition, randomNum} from '@utils'
+import {Arrays, getPosition, randomNum} from '@utils'
 
 import ToplBaseModel from '../ToplBaseModel';
 
@@ -19,6 +19,7 @@ import {BaseModel, ComSeedModel, I_FrameModel, I_PinModel, T_PinSchema} from '@s
 import {clone, ignore, Ignore, Serializable} from '@mybricks/rxui';
 import {SerializeNS} from '../constants';
 import {createConModel} from "../ToplUtil";
+import {JointModel} from "../joint/JointModel";
 
 @Serializable(SerializeNS + 'topl.FrameModel')
 export default class FrameModel extends ToplBaseModel implements I_FrameModel {
@@ -51,6 +52,10 @@ export default class FrameModel extends ToplBaseModel implements I_FrameModel {
   inputPins: Array<PinModel> = []
 
   outputPins: Array<PinModel> = []
+
+  inputJoints: Array<JointModel> = []
+
+  outputJoints: Array<JointModel> = []
 
   comAry: ToplComModel[] = []
 
@@ -277,6 +282,22 @@ export default class FrameModel extends ToplBaseModel implements I_FrameModel {
       return this.comAry[this.comAry.length - 1]//Return observable
     }
     return model
+  }
+
+  addInputJoint(): JointModel {
+    let joint = new JointModel('input', 30 + (this.parent.inputPins.length + this.inputJoints.length) * 18, this.inputJoints.length);
+    this.inputJoints.push(joint)
+    joint.parent = this;
+
+    return joint
+  }
+
+  addOutputJoint(): JointModel {
+    let joint = new JointModel('output', 30 + (this.parent.outputPins.length + this.outputJoints.length) * 18, this.inputJoints.length);
+    this.outputJoints.push(joint)
+    joint.parent = this;
+
+    return joint
   }
 
   addConnection(from: ConModel, temp?: boolean): ConModel
@@ -643,6 +664,56 @@ export default class FrameModel extends ToplBaseModel implements I_FrameModel {
 
     (!whichSide || whichSide == 'input') && this.inputPins.forEach(refreshIn);
     (!whichSide || whichSide == 'output') && this.outputPins.forEach(refreshOut)
+  }
+
+  refreshJoints(forAll?) {
+    this.outputJoints.forEach(joint => {
+      let comModel = this.parent,
+        frameModel = comModel.parent,
+        jtEle = joint.$el as HTMLElement,
+        jtPoOuter = getPosition(jtEle, frameModel.$el),
+        jtPoInner = getPosition(jtEle, joint.parent.$el)
+
+      if (forAll && joint.from) {
+        joint.from.finishPo = {
+          x: jtPoInner.x,
+          y: jtPoInner.y + jtEle.offsetHeight / 2,
+          j: joint.getJoinerWidth()
+        }
+      }
+
+      if (joint.to) {
+        joint.to.startPo = {
+          x: jtPoOuter.x + jtEle.offsetWidth,
+          y: jtPoOuter.y + jtEle.offsetHeight / 2,
+          j: joint.getJoinerWidth()
+        }
+      }
+    })
+
+    this.inputJoints.forEach(joint => {
+      let comModel = this.parent,
+        frameModel = comModel.parent,
+        jtEle = joint.$el as HTMLElement,
+        jtPoOuter = getPosition(jtEle, frameModel.$el),
+        jtPoInner = getPosition(jtEle, joint.parent.$el)
+
+      if (forAll && joint.to) {
+        joint.to.startPo = {
+          x: jtPoInner.x + jtEle.offsetWidth - 4,
+          y: jtPoInner.y + jtEle.offsetHeight / 2,
+          j: joint.getJoinerWidth()
+        }
+      }
+
+      if (joint.from) {
+        joint.from.finishPo = {
+          x: jtPoOuter.x,
+          y: jtPoOuter.y + jtEle.offsetHeight / 2,
+          j: joint.getJoinerWidth()
+        }
+      }
+    })
   }
 
   applyZIndex(model: ToplComModel | ConModel) {

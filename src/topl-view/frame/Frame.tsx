@@ -31,9 +31,9 @@ export default function Frame({model, show}: { model: FrameModel, show: boolean 
     comContext, model
   }))
 
-  useEffect(() => {
-    validateCurFrame(model, comContext.viewContext)
-  }, [])
+  // useEffect(() => {
+  //   validateCurFrame(model, comContext.viewContext)
+  // }, [])
 
   // if(model.inputJoints.length>0){
   //   debugger

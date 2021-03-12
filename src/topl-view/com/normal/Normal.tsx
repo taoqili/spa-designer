@@ -13,7 +13,7 @@ import {useMemo} from 'react';
 import css from './Normal.less';
 import cssParant from '../ToplCom.less';
 
-import {ComContext, getStyle, Info, Inputs, mouseDown, Ouputs} from '../ToplCom';
+import {ComContext, getStyle, Info, Inputs, mouseDown, Outputs} from '../ToplCom';
 import {get as getConfigurable, getEditContext} from '../configrable'
 import {get as getListenable} from '../listenable'
 import {ICON_COM_DEFAULT} from "@sdk";
@@ -93,7 +93,7 @@ export default function Normal() {
       }
       <p className={css.title}>{model.runtime.title || comDef.title}</p>
       <Inputs model={model}/>
-      <Ouputs model={model}/>
+      <Outputs model={model}/>
       <Info model={model}/>
     </div>
   )
