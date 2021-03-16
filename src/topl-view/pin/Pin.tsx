@@ -21,6 +21,7 @@ import NormalPin from "./normal/Normal";
 import {ComContext} from "../com/ToplCom";
 import {ToplComModel} from "../com/ToplComModel";
 import I_Configurable = NS_Configurable.I_Configurable;
+import Start from "./start/Start";
 
 require('./PinModelForked')
 
@@ -90,7 +91,12 @@ export default function Pin({model, type}: { model: PinModel, type?: undefined |
   //   _2020_11_09.pin(model)
   // }, [])
 
-  return <NormalPin click={click} mousedown={mousedown} help={help}/>
+  if (type && type === 'start') {
+    return <Start click={click} mousedown={mousedown} help={help}/>
+  }
+  else {
+    return <NormalPin click={click} mousedown={mousedown} help={help}/>
+  }
 }
 
 //Global focus PinModel

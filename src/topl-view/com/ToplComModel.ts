@@ -16,6 +16,7 @@ import {E_ItemType, I_Node} from '@mybricks/compiler-js';
 import {clone, Ignore, Serializable} from '@mybricks/rxui';
 import {BaseModel, ComSeedModel, NS_Emits, T_PinSchema, T_XGraphComDef} from '@sdk';
 import {SerializeNS} from '../constants';
+import DiagramModel from "../frame/DiagramModel";
 
 @Serializable(SerializeNS + 'topl.ToplComModel')
 export class ToplComModel extends ComSeedModel implements I_Node {
@@ -218,6 +219,11 @@ export class ToplComModel extends ComSeedModel implements I_Node {
       })
     }
     return rtn;
+  }
+
+  fork(parent: FrameModel | DiagramModel, io?: { inputs?, outputs? } | 'all-outputs') {
+    const ToplComModelForked = require('./ToplComModelForked').default
+    return new ToplComModelForked(parent, this, io)
   }
 
   isDebugMode() {

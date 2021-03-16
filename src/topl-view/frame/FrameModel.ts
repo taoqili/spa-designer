@@ -20,6 +20,7 @@ import {clone, ignore, Ignore, Serializable} from '@mybricks/rxui';
 import {SerializeNS} from '../constants';
 import {createConModel} from "../ToplUtil";
 import {JointModel} from "../joint/JointModel";
+import DiagramModel from "./DiagramModel";
 
 @Serializable(SerializeNS + 'topl.FrameModel')
 export default class FrameModel extends ToplBaseModel implements I_FrameModel {
@@ -48,6 +49,10 @@ export default class FrameModel extends ToplBaseModel implements I_FrameModel {
   parent: ToplComModel
 
   isFrame: boolean = true;
+
+  diagramAry: DiagramModel[] = []
+
+  focusedDiagram: DiagramModel
 
   inputPins: Array<PinModel> = []
 
@@ -134,6 +139,32 @@ export default class FrameModel extends ToplBaseModel implements I_FrameModel {
 
   isDebugMode() {
     return this.parent.isDebugMode()
+  }
+
+  addDiagram(startFrom?: ToplComModel) {
+    const diagram = new DiagramModel(this, startFrom)
+    this.diagramAry.push(diagram)
+    return this.diagramAry[this.diagramAry.length - 1]
+  }
+
+  addIODiagram() {
+    const diagram = new DiagramModel(this)
+    diagram.showIO = true
+
+    this.diagramAry.push(diagram)
+    return this.diagramAry[this.diagramAry.length - 1]
+  }
+
+  searchDiagramByStartCom(startCom: ToplComModel): DiagramModel {
+    if (this.diagramAry) {
+      return this.diagramAry.find((diagram, idx) => {
+        if (diagram.startFrom) {
+          if (diagram.startFrom.forkedFrom === startCom) {
+            return true
+          }
+        }
+      }) as DiagramModel
+    }
   }
 
   addInputPin(hostId: string, title: string, schema: T_PinSchema, conMax?: number, deletable?: boolean): PinModel {

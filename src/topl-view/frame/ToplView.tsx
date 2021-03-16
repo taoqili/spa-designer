@@ -120,6 +120,8 @@ export default function ToplView({frameModel}: { frameModel: FrameModel }) {
     }
   })
 
+  const ExtView = context.configs.extPoints?.['toplView']
+
   return (
     <div className={css.viewWrap}
          ref={ele => ele && (viewCtx.wrapEle = ele)}
@@ -127,10 +129,10 @@ export default function ToplView({frameModel}: { frameModel: FrameModel }) {
         style={viewWrapStyle}
         onClick={click}
         onScroll={scoll}>
-      {/*{*/}
-      {/*  context.useLatestFeatures ? <DiagramView/> : <ToplNormalView/>*/}
-      {/*}*/}
-      <ToplNormalView/>
+      {
+        ExtView ? <ExtView/> : <ToplNormalView/>
+      }
+      {/*<ToplNormalView/>*/}
     </div>
   )
 }

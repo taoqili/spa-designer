@@ -35,6 +35,9 @@
       "@mybricks/spa-designer": [
         "./src/index.ts"
       ],
+      "@mybricks/spa-designer/ext": [
+        "./src/ext/index.ts"
+      ],
       "@mybricks/compiler-js": [
         "../../opensource-base/compiler-js/index.ts"
       ]

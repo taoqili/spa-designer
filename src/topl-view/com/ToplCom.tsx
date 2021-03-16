@@ -24,6 +24,8 @@ import {PinModel} from "../pin/PinModel";
 import Pin from "../pin/Pin";
 import FrameModel from "../frame/FrameModel";
 import Block from "./block/Block";
+import ToplComModelForked from "./ToplComModelForked";
+import Start from "./start/Start";
 
 export class ComContext {
   context: DesignerContext
@@ -121,7 +123,9 @@ export default function ToplCom({model}: { model: ToplComModel }) {
     }
   }, [])
 
-  if (model.frames?.length > 0) {
+  if (model instanceof ToplComModelForked && model.isStartInDiagram()) {
+    return <Start/>
+  }else if (model.frames?.length > 0) {
     return <Block/>
   } else {
     return <Normal/>
@@ -173,6 +177,12 @@ function upgrade() {
 
 export function Inputs({model, inputPinAry, readOnly}:
                          { model: ToplComModel, inputPinAry?: PinModel[] }) {
+  useComputed(() => {
+    if (model instanceof ToplComModelForked) {
+      model.synchronizeInputs()
+    }
+  })
+
   const rtn = []
 
   if (model.inputPins) {
@@ -218,6 +228,12 @@ export function Inputs({model, inputPinAry, readOnly}:
 
 export function Outputs({model, outputPinAry, type, className}:
                          { model: ToplComModel, outputPinAry?: PinModel[] }) {
+  useComputed(() => {
+    if (model instanceof ToplComModelForked) {
+      model.synchronizeOutputs()
+    }
+  })
+
   const rtn = []
 
   if (model.outputPins) {

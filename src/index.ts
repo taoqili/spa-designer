@@ -11,4 +11,4 @@ import Designer from './Designer'
 
 export default Designer
 
-export {PlugIns} from './plugins'
+export {_ExtSupports} from './ext/_extSupports'

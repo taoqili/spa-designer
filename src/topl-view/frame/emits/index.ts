@@ -107,6 +107,9 @@ export function initEmitComponent(tvContext: ToplViewContext): NS_Emits.Componen
         const nmodel = frameModel.addComponent(gmodel)
 
         if (context.isDesnMode()) {
+          if (nmodel.runtime.hasUI()) {
+            frameModel.addDiagram(nmodel)
+          }
 
           if (frameModel.state.isEnabled()) {
             setTimeout(v => {

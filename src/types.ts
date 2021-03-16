@@ -252,6 +252,8 @@ export type T_DesignerConfig = {
 
   title: string
 
+  extPoints:{[name:string]:Function}
+
   comlibLoader: () => Promise<T_XGraphComLib[]>
 
   comlibAdder: any

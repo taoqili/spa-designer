@@ -11,7 +11,6 @@ import BaseModel from './BaseModel';
 import ComSeedModel from "./ComSeedModel";
 import ComRuntimeModel from './ComRuntimeModel'
 import {
-  I_ConModel,
   I_FrameModel,
   I_PinModel,
   T_ComDef,

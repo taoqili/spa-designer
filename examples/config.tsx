@@ -1,10 +1,14 @@
 import {getLocationSearch} from "./utils";
 import {LS_DEFAULT_KEY, LS_VB_PRE} from "./constants";
+import DiagramView from "../_plugins/src/diagram/DiagramView";
 
 export default {
+  extPoints: {
+    toplView: DiagramView
+  },
   comlibAdder(): Promise<any> {//Demo
     return new Promise((resolve, reject): void => {
-      import('../../bricks-logic').then(lib => {
+      import('../../comlib-logic-normal').then(lib => {
         resolve(lib.default)
       })
     })
@@ -38,10 +42,10 @@ export default {
 
 function comlibLoader(): Promise<any> {
   return new Promise((resolve, reject): void => {
-    import('../../bricks-logic').then(lib => {
+    import('../../comlib-logic-normal').then(lib => {
       const libs = [lib.default]
       try {
-        const chartLib = require('../../bricks-pc-normal')
+        const chartLib = require('../../comlib-pc-normal')
         if (chartLib) {
           libs.push(chartLib.default)
         }

@@ -107,7 +107,7 @@ function TitleBar({loaded}) {
 
 function jsxHandler(handler,style?) {
   const title = handler.title
-  const style = Object.assign({opacity: handler.disabled ? 0.2 : 1},style || {})
+  style = Object.assign({opacity: handler.disabled ? 0.2 : 1},style || {})
   return (
     <button disabled={handler.disabled} key={handler.id} onClick={handler.exe}
             style={style}>{title}</button>
