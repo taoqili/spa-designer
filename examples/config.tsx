@@ -1,11 +1,7 @@
 import {getLocationSearch} from "./utils";
 import {LS_DEFAULT_KEY, LS_VB_PRE} from "./constants";
-import DiagramView from "../_plugins/src/diagram/DiagramView";
 
 export default {
-  extPoints: {
-    toplView: DiagramView
-  },
   comlibAdder(): Promise<any> {//Demo
     return new Promise((resolve, reject): void => {
       import('../../comlib-logic-normal').then(lib => {

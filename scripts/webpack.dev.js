@@ -13,8 +13,8 @@ module.exports = merge(commonCfg, {
     'React': 'React',
     'react': 'React',
     'react-dom': 'ReactDOM',
-    'rxui': 'rxui',
-    '@visualbricks/rxui': 'rxui',
+    // 'rxui': 'rxui',
+    '@mybricks/rxui': '@mybricks/rxui',
     'antd': 'antd',
     'blockly': 'Blockly',
     'blocks': 'blocks',
@@ -24,7 +24,7 @@ module.exports = merge(commonCfg, {
   devtool: 'cheap-source-map',//devtool: 'cheap-source-map',
   resolve: {
     alias: {
-      '@mybricks/designer': require('path').resolve(__dirname, '../src/index.ts'),
+      //'@mybricks/designer': require('path').resolve(__dirname, '../src/index.ts'),
       //'@visualbricks/designer': require('path').resolve(__dirname, '../dist/index.js'),
       '@sdk': require('path').resolve(__dirname, '../src/sdk.ts'),
       '@utils': require('path').resolve(__dirname, '../src/utils/index.ts'),
