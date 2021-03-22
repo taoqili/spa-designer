@@ -64,13 +64,13 @@ function pageLoader(pageId: string) {
     }
 
     if (!pageData) {
-      if (!searchParam || !searchParam.length) {
-        import('./data/example.json').then(json => {
-          fn(json.default)
-        })
-      } else {
+      // if (!searchParam || !searchParam.length) {
+      //   import('./data/example.json').then(json => {
+      //     fn(json.default)
+      //   })
+      // } else {
         resolve()
-      }
+      //}
     } else {
       fn(JSON.parse(pageData))
     }
