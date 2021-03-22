@@ -12,12 +12,7 @@
   "author": "CheMingjun",
   "license": "",
   "dependencies": {
-    "@ant-design/icons": "^4.5.0",
-    "@mybricks/compiler-js": "^0.0.1",
-    "@mybricks/rxui": "^1.0.4",
-    "@mybricks/spa-designer": "^1.0.4",
-    "antd": "^4.12.3",
-    "react-color": "^2.19.3"
+    "@mybricks/spa-designer": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
