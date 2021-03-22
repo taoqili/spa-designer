@@ -1,18 +1,14 @@
 import {getLocationSearch} from "./utils";
 import {LS_DEFAULT_KEY, LS_VB_PRE} from "./constants";
-import DiagramView from "../_plugins/src/diagram/DiagramView";
 
 export default {
-  extPoints: {
-    toplView: DiagramView
-  },
-  comlibAdder(): Promise<any> {//Demo
-    return new Promise((resolve, reject): void => {
-      import('../../comlib-logic-normal').then(lib => {
-        resolve(lib.default)
-      })
-    })
-  },
+  // comlibAdder(): Promise<any> {//Demo
+  //   return new Promise((resolve, reject): void => {
+  //     import('../../comlib-logic-normal').then(lib => {
+  //       resolve(lib.default)
+  //     })
+  //   })
+  // },
   comlibLoader,
   pageLoader,
   stage: {//舞台
@@ -42,16 +38,8 @@ export default {
 
 function comlibLoader(): Promise<any> {
   return new Promise((resolve, reject): void => {
-    import('../../comlib-logic-normal').then(lib => {
+    import('./comlib').then(lib => {
       const libs = [lib.default]
-      try {
-        const chartLib = require('../../comlib-pc-normal')
-        if (chartLib) {
-          libs.push(chartLib.default)
-        }
-      } catch (e) {
-
-      }
       resolve(libs)
     })
   })
@@ -76,13 +64,13 @@ function pageLoader(pageId: string) {
     }
 
     if (!pageData) {
-      if (!searchParam || !searchParam.length) {
-        import('./data/example.json').then(json => {
-          fn(json.default)
-        })
-      } else {
+      // if (!searchParam || !searchParam.length) {
+      //   import('./data/example.json').then(json => {
+      //     fn(json.default)
+      //   })
+      // } else {
         resolve()
-      }
+      //}
     } else {
       fn(JSON.parse(pageData))
     }
