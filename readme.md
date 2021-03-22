@@ -14,7 +14,7 @@
 
 ```bash
 git clone git@github.com:mybricks/spa-designer.git
-cd ./designer
+cd ./spa-designer
 npm install
 npm run dev
 ```
